@@ -1,0 +1,11 @@
+### kubectl commands to clean up and create the pod
+
+kubectl delete pod storage-access-test --ignore-not-found
+
+#apply creates the pod
+kubectl apply -f storage-access-test.yaml
+
+kubectl get pod storage-access-test -o wide
+
+#log will show what the pod did.... it should list the files in the azure storage container
+kubectl logs storage-access-test
